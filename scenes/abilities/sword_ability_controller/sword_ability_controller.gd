@@ -1,5 +1,7 @@
 extends Node
 
+@export var max_range_float: float = 150
+
 @export var sword_ability: PackedScene
 
 
@@ -12,6 +14,24 @@ func on_Timer_timeout():
 	var player: Node2D = get_tree().get_first_node_in_group("player")
 	if player == null:
 		return
+
+	var enemies: Array = get_tree().get_nodes_in_group("enemy")
+	enemies = enemies.filter(
+		func(enemy: Node2D): return (
+			enemy.global_position.distance_squared_to(player.global_position)
+			< pow(max_range_float, 2)
+		)
+	)
+	if enemies.size() == 0:
+		return
+
+	enemies.sort_custom(
+		func(a: Node2D, b: Node2D): return (
+			a.global_position.distance_squared_to(player.global_position)
+			< b.global_position.distance_squared_to(player.global_position)
+		)
+	)
+
 	var sword_instance: Node2D = sword_ability.instantiate()
 	player.get_parent().add_child(sword_instance)
-	sword_instance.global_position = player.global_position
+	sword_instance.global_position = enemies[0].global_position
