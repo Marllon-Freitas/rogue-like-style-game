@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvpaewth82d4p"]
+
+[ext_resource type="Script" path="res://scenes/manager/expirience_manager.gd" id="1_0ckc3"]
+
+[node name="ExpirienceManager" type="Node"]
+script = ExtResource("1_0ckc3")
