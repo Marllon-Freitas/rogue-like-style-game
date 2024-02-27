@@ -5,7 +5,7 @@ const MAX_SPEED: int = 75
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass  # Replace with function body.
+	$Area2D.area_entered.connect(on_area_entered)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,3 +21,7 @@ func get_directionToPlayer():
 		return (player_node.global_position - global_position).normalized()
 	else:
 		return Vector2.ZERO
+
+
+func on_area_entered(_area: Area2D):
+	queue_free()
