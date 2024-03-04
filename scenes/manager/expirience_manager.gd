@@ -7,7 +7,7 @@ const TARGET_EXPERIENCE_GROWTH = 5
 
 var current_expirience: float = 0
 var current_level: int = 1
-var target_experience: float = 5
+var target_experience: float = 1
 
 
 func _ready():
