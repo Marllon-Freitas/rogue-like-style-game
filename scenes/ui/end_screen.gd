@@ -14,3 +14,8 @@ func on_restart_button_pressed():
 
 func on_quit_button_pressed():
 	get_tree().quit()
+
+
+func set_defeat():
+	$%TitleLabel.text = "Defeated"
+	$%DescriptionLabel.text = "You Lost :("
