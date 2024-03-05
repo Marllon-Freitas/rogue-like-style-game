@@ -29,6 +29,17 @@ script = ExtResource("1_qku45")
 wait_time = 0.5
 one_shot = true
 
+[node name="HealthBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(32, 5)
+offset_left = -16.0
+offset_top = -23.0
+offset_right = 16.0
+offset_bottom = -18.0
+pivot_offset = Vector2(16, 2.5)
+max_value = 1.0
+value = 0.5
+show_percentage = false
+
 [node name="PikupArea2D" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 0
