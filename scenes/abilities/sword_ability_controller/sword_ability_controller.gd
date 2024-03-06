@@ -1,7 +1,7 @@
 extends Node
 
 @export var max_range_float: float = 150
-@export var sword_ability: PackedScene
+@export var sword_ability_scene: PackedScene
 
 var damage: int = 5
 var base_wait_time
@@ -36,9 +36,9 @@ func on_Timer_timeout():
 		)
 	)
 
-	var sword_instance = sword_ability.instantiate() as SwordAbility
-	var foreground_layer = get_tree().get_first_node_in_group("foreground_layer")
-	foreground_layer.add_child(sword_instance)
+	var sword_instance = sword_ability_scene.instantiate() as SwordAbility
+	var foreground = get_tree().get_first_node_in_group("foreground_layer")
+	foreground.add_child(sword_instance)
 	sword_instance.hit_box_component.damage = damage
 
 	sword_instance.global_position = enemies[0].global_position
