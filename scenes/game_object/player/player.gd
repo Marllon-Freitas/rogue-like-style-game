@@ -35,7 +35,6 @@ func _process(delta):
 		animation_player.play("RESET")
 
 	var move_sign = sign(movement_vector.x)
-	print(move_sign)
 	if move_sign == 0:
 		visuals.scale = Vector2.ONE
 	else:
