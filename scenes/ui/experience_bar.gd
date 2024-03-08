@@ -9,6 +9,6 @@ func _ready():
 	experience_manager.experience_updated.connect(on_experience_updated)
 
 
-func on_experience_updated(current_expirience: float, target_experience: float):
-	var percentage = current_expirience / target_experience
+func on_experience_updated(current_experience: float, target_experience: float):
+	var percentage = current_experience / target_experience
 	progress_bar.value = percentage
