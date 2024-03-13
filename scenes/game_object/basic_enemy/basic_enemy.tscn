@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://beesha3sjopme"]
+[gd_scene load_steps=21 format=3 uid="uid://beesha3sjopme"]
 
 [ext_resource type="Script" path="res://scenes/game_object/basic_enemy/basic_enemy.gd" id="1_3h3tl"]
 [ext_resource type="Texture2D" uid="uid://cfcei8wmrmkxp" path="res://scenes/game_object/basic_enemy/basic_enemy.png" id="1_rijaj"]
@@ -9,6 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://r6lwoxkhehyt" path="res://scenes/component/velocity_component.tscn" id="4_ohsct"]
 [ext_resource type="PackedScene" uid="uid://bdl7mghlw3l3b" path="res://scenes/component/hit_flash_component.tscn" id="5_jxdv6"]
 [ext_resource type="Shader" path="res://scenes/component/hit_flash_component.gdshader" id="6_a75uv"]
+[ext_resource type="PackedScene" uid="uid://cg0jdpodm2urt" path="res://scenes/component/random_stream_player_2d_component.tscn" id="10_24jjy"]
+[ext_resource type="AudioStream" uid="uid://c3etnpb18eaws" path="res://assets/audio/footstep_carpet_001.ogg" id="10_kddn1"]
+[ext_resource type="AudioStream" uid="uid://cjqeqbo474nqc" path="res://assets/audio/footstep_carpet_002.ogg" id="12_bf4ox"]
+[ext_resource type="AudioStream" uid="uid://c53rvq2i4que2" path="res://assets/audio/footstep_carpet_003.ogg" id="13_o4jum"]
+[ext_resource type="AudioStream" uid="uid://dcydf2yt580pd" path="res://assets/audio/footstep_carpet_004.ogg" id="14_3yeco"]
 
 [sub_resource type="Animation" id="Animation_8jfot"]
 length = 0.001
@@ -111,6 +116,10 @@ hit_flash_material = SubResource("ShaderMaterial_fwa1y")
 [node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("4_lbkji")]
 health_component = NodePath("../HealthComponent")
 sprite = NodePath("../Visuals/Sprite2D")
+
+[node name="HitRandomAudioPlayerComponent" parent="." instance=ExtResource("10_24jjy")]
+max_distance = 300.0
+streams = Array[AudioStream]([ExtResource("10_kddn1"), ExtResource("12_bf4ox"), ExtResource("13_o4jum"), ExtResource("14_3yeco")])
 
 [node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_6c6d1")]
 visible = false

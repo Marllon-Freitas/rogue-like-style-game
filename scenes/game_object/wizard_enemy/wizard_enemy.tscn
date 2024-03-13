@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c8cxi8yijmmre"]
+[gd_scene load_steps=21 format=3 uid="uid://c8cxi8yijmmre"]
 
 [ext_resource type="PackedScene" uid="uid://w76i2sn13qgi" path="res://scenes/component/health_component.tscn" id="1_3ehxx"]
 [ext_resource type="Script" path="res://scenes/game_object/wizard_enemy/wizard_enemy.gd" id="1_nc0u2"]
@@ -9,6 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://byqsmgij0uppb" path="res://scenes/component/vial_drop_component.tscn" id="4_vg10w"]
 [ext_resource type="PackedScene" uid="uid://bdl7mghlw3l3b" path="res://scenes/component/hit_flash_component.tscn" id="5_n54f4"]
 [ext_resource type="Shader" path="res://scenes/component/hit_flash_component.gdshader" id="6_jrig3"]
+[ext_resource type="PackedScene" uid="uid://cg0jdpodm2urt" path="res://scenes/component/random_stream_player_2d_component.tscn" id="8_5ddgm"]
+[ext_resource type="AudioStream" uid="uid://c3etnpb18eaws" path="res://assets/audio/footstep_carpet_001.ogg" id="9_2j2w5"]
+[ext_resource type="AudioStream" uid="uid://cjqeqbo474nqc" path="res://assets/audio/footstep_carpet_002.ogg" id="10_f2akq"]
+[ext_resource type="AudioStream" uid="uid://c53rvq2i4que2" path="res://assets/audio/footstep_carpet_003.ogg" id="11_r5tw2"]
+[ext_resource type="AudioStream" uid="uid://dcydf2yt580pd" path="res://assets/audio/footstep_carpet_004.ogg" id="12_v7oyp"]
 
 [sub_resource type="Animation" id="Animation_28kpa"]
 length = 0.001
@@ -155,6 +160,10 @@ hit_flash_material = SubResource("ShaderMaterial_wdcny")
 [node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("2_w0p05")]
 health_component = NodePath("../HealthComponent")
 sprite = NodePath("../Visuals/Sprite2D")
+
+[node name="HitRandomAudioPlayerComponent" parent="." instance=ExtResource("8_5ddgm")]
+max_distance = 300.0
+streams = Array[AudioStream]([ExtResource("9_2j2w5"), ExtResource("10_f2akq"), ExtResource("11_r5tw2"), ExtResource("12_v7oyp")])
 
 [node name="Visuals" type="Node2D" parent="."]
 

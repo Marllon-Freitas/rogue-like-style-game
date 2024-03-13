@@ -74,6 +74,7 @@ func on_body_exited(_other_body: Node2D):
 func on_health_changed():
 	GameEvents.emit_player_damagd()
 	update_health_display()
+	$RandomStreamPlayer2DComponent.play_random()
 
 
 func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, _current_upgrades: Dictionary):
