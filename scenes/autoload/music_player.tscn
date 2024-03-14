@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu5kfv7di70gd"]
+
+[ext_resource type="AudioStream" uid="uid://c3etnpb18eaws" path="res://assets/audio/footstep_carpet_001.ogg" id="1_7tulb"]
+[ext_resource type="Script" path="res://scenes/autoload/music_player.gd" id="2_inaub"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_7tulb")
+volume_db = 10.0
+autoplay = true
+bus = &"music"
+script = ExtResource("2_inaub")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true

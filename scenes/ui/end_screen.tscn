@@ -73,12 +73,12 @@ autoplay = "in"
 
 [node name="VictoryStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_o6thg")
-volume_db = -5.0
+volume_db = -15.0
 bus = &"sfx"
 
 [node name="DefeatStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_yig6h")
-volume_db = -5.0
+volume_db = -15.0
 bus = &"sfx"
 
 [node name="ColorRect" type="ColorRect" parent="."]
